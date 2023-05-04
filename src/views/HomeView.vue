@@ -21,7 +21,7 @@ let sentenceInfo = reactive<sentenceInfoProp>({
   creator: "",
   creator_uid: 4105,
   from: "",
-  from_who: null,
+  from_who: "",
   hitokoto: "",
   id: 4814,
   length: 27,
@@ -34,27 +34,30 @@ const getSentence = async () => {
   console.log(res);
   Object.assign(sentenceInfo, res);
 };
-
 getSentence();
 </script>
 
 <template>
-  <figure class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-    <img
-      class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-      src="@/assets/svg/undraw_reading_time_re_phf7.svg"
-      alt=""
-      width="384"
-      height="512"
-    />
-    <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+  <figure class="lg:flex bg-gray-100 rounded-xl p-8 lg:p-0 lg:justify-center">
+    <img class="figureImg" src="@/assets/svg/undraw_reading_time_re_phf7.svg" alt="" />
+    <div class="figureInfo pt-6 md:p-8 text-center md:text-left space-y-4">
       <blockquote>
-        <p class="text-lg font-semibold">“{{ sentenceInfo.hitokoto }}”</p>
+        <p class="text-lg font-semibold">
+          “{{ sentenceInfo.hitokoto || "社会乱象，根源在我。" }}”
+        </p>
       </blockquote>
       <figcaption class="font-medium">
         <div class="text-cyan-600">{{ sentenceInfo.from_who }}</div>
-        <div class="text-gray-500">{{ sentenceInfo.from }}</div>
+        <div class="text-gray-500">{{ sentenceInfo.from || "伦敦日报" }}</div>
       </figcaption>
     </div>
   </figure>
 </template>
+<style lang="postcss" scoped>
+.figureImg {
+  @apply h-auto rounded-full mx-auto lg:w-48 lg:h-48 w-52 lg:rounded-none lg:mx-0;
+}
+.figureInfo {
+  @apply pt-6 lg:p-8 text-center lg:text-left space-y-4;
+}
+</style>
