@@ -30,5 +30,6 @@ a {
 }
 main {
   flex: 1;
+  @apply flex flex-col;
 }
 </style>
