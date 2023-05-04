@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import { getHitokotoSentence } from "./api/otherApi";
 </script>
 
 <template>
@@ -7,12 +8,14 @@ import { RouterLink, RouterView } from "vue-router";
     <logo> Mingo Wang </logo>
     <nav>
       <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/article">Article</RouterLink>
       <RouterLink to="/photo">Photo</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </nav>
   </header>
-
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <style scoped lang="postcss">
@@ -24,5 +27,8 @@ nav {
 }
 a {
   @apply hover:underline;
+}
+main {
+  flex: 1;
 }
 </style>
