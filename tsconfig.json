@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "files": [],
   "references": [
     {
@@ -12,6 +13,20 @@
     },
     {
       "path": "./nightwatch/tsconfig.json"
+=======
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+>>>>>>> 6ac7edc21728880c9b6a1489730bd3a1592767b0
     }
   ]
 }

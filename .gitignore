@@ -26,8 +26,11 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
 
 *.tsbuildinfo
 
 logs/
 tests_output/
+=======
+>>>>>>> 6ac7edc21728880c9b6a1489730bd3a1592767b0

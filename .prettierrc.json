@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 {
   "$schema": "https://json.schemastore.org/prettierrc",
@@ -5,3 +6,13 @@
   "singleQuote": true,
   "printWidth": 100
 }
+=======
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "printWidth": 100,
+  "trailingComma": "none"
+}
+>>>>>>> 6ac7edc21728880c9b6a1489730bd3a1592767b0

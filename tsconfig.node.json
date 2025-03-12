@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "extends": "@tsconfig/node22/tsconfig.json",
   "include": [
     "vite.config.*",
@@ -14,6 +15,12 @@
 
     "module": "ESNext",
     "moduleResolution": "Bundler",
+=======
+  "extends": "@vue/tsconfig/tsconfig.node.json",
+  "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "playwright.config.*"],
+  "compilerOptions": {
+    "composite": true,
+>>>>>>> 6ac7edc21728880c9b6a1489730bd3a1592767b0
     "types": ["node"]
   }
 }
