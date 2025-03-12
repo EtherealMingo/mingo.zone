@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "recommendations": [
     "Vue.volar",
     "vitest.explorer",
@@ -7,4 +8,7 @@
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode"
   ]
+=======
+  "recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
+>>>>>>> 6ac7edc21728880c9b6a1489730bd3a1592767b0
 }
