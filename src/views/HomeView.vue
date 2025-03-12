@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
   <div class="mx-auto p-6">
     <div class="card mb-4">
@@ -138,19 +137,3 @@ onMounted(() => {
   /* 添加右边距 */
 }
 </style>
-=======
-<script setup lang="ts">
-import SentenceFigure from "../components/SentenceFigure.vue";
-import { onMounted, reactive, ref } from "vue";
-</script>
-
-<template>
-  <div>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae eos assumenda sed?
-    Ipsam rem, sint in totam molestiae voluptate. At fugit placeat quisquam impedit. Iure
-    odio esse quas id nisi?
-  </div>
-  <SentenceFigure></SentenceFigure>
-</template>
-<style lang="postcss" scoped></style>
->>>>>>> 6ac7edc21728880c9b6a1489730bd3a1592767b0
