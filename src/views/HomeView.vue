@@ -82,7 +82,7 @@
           ethereal_mingo
         </a>
       </li>
-      <li>
+      <li class="flex items-center">
         <span class="mr-2">🐦 微博：</span>
 
         <a
@@ -96,23 +96,23 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const hitokoto = reactive({
   text: ':D 获取中...',
   author: '',
   source: '',
-  showCaption: false,
-})
+  showCaption: false
+});
 
-const fetchHitokoto = async () => {
+async function fetchHitokoto() {
   try {
     const response = await fetch('https://v1.hitokoto.cn?c=d&encode=json')
     const data = await response.json()
 
     hitokoto.text = data.hitokoto
-    hitokoto.author = data.from_who || ''
-    hitokoto.source = data.from || ''
-    hitokoto.showCaption = !!hitokoto.author || !!hitokoto.source
+    hitokoto.author = data.from_who ?? ''
+    hitokoto.source = data.from ?? ''
+    hitokoto.showCaption = Boolean(data.from_who || data.from)
   } catch (_error) {
     hitokoto.text = '获取失败，点击重试'
     hitokoto.showCaption = false

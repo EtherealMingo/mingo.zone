@@ -1,10 +1,10 @@
 <template>
   <div class="container mx-auto p-6">
     <h1 class="text-3xl font-bold mb-8 text-gray-800">技术博客</h1>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- 博客文章卡片 -->
-      <div 
+      <div
         v-for="(post, index) in blogPosts"
         :key="index"
         class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const blogPosts = [
   {
     title: 'Vue3组合式API最佳实践',

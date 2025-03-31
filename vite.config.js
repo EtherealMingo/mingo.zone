@@ -17,7 +17,7 @@ export default defineConfig({
     nightwatchPlugin(),
     AutoImport({
       imports: ['vue'],
-      dts: 'src/auto-imports.d.ts',
+      dts: 'src/auto-imports.d.js',
     }),
     tailwindcss(),
   ],
