@@ -1,43 +1,44 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from "url";
+import { defineConfig, loadEnv } from "vite";
+import { resolve } from "path";
+import { tmpdir } from "os";
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import vueDevTools from 'vite-plugin-vue-devtools'
-import nightwatchPlugin from 'vite-plugin-nightwatch'
-import AutoImport from 'unplugin-auto-import/vite'
-import tailwindcss from '@tailwindcss/vite'
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    vueDevTools(),
-    nightwatchPlugin(),
-    AutoImport({
-      imports: ['vue'],
-      dts: 'src/auto-imports.d.js',
-    }),
-    tailwindcss(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
-  server: {
-    port: 3000,
-    open: true,
-    strictPort: true,
-    host: true,
+export default defineConfig(({ mode }) => {
+  // 加载 .env 文件
+  const env = loadEnv(mode, process.cwd(), "");
 
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+  const isProdEnv = mode === "production";
+  const PUBLIC_PATH = isProdEnv
+    ? env.VITE_PUBLIC_PATH + "/" + env.VITE_CHAT_VARIABLE
+    : env.VITE_PUBLIC_PATH;
+  const OUT_DIR = isProdEnv ? "build/" + env.VITE_CHAT_VARIABLE : "build";
+
+  return {
+    server: {
+      host: "::",
+      port: "8080",
+      hmr: {
+        overlay: false,
       },
     },
-  },
-})
+    plugins: [react()],
+    base: "/",
+    build: {
+      outDir: OUT_DIR,
+    },
+    resolve: {
+      alias: [
+        {
+          find: "@",
+          replacement: fileURLToPath(new URL("./src", import.meta.url)),
+        },
+        {
+          find: "lib",
+          replacement: resolve(__dirname, "lib"),
+        },
+      ],
+    },
+  };
+});

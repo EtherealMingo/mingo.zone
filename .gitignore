@@ -1,36 +1,3 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
 node_modules
-.DS_Store
-dist
-dist-ssr
-coverage
-*.local
-
-/cypress/videos/
-/cypress/screenshots/
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-<<<<<<< HEAD
-
-*.tsbuildinfo
-
-logs/
-tests_output/
-=======
->>>>>>> 6ac7edc21728880c9b6a1489730bd3a1592767b0
+package-lock.json
+build

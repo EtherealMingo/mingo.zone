@@ -1,13 +1,41 @@
-<!doctype html>
-<html lang="">
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/public/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mingo.zone</title>
+    <title>Mingo | 前端开发工程师 | 个人主页</title>
+    <meta
+      name="description"
+      content="Mingo 的个人主页，前端开发工程师，专注于 React、Vue、音视频处理、小程序开发等，展示项目、摄影与简历，南京，中国。"
+    />
+    <meta
+      name="keywords"
+      content="Mingo,前端开发,React,Vue,音视频,小程序,个人简历,项目,摄影,南京,中国,Web开发,TypeScript,JavaScript,uniapp,可视化,工程师"
+    />
+    <meta name="author" content="汪泉明, Mingo" />
+    <meta property="og:title" content="Mingo | 前端开发工程师 | 个人主页" />
+    <meta
+      property="og:description"
+      content="Mingo 的个人主页，专注于前端开发、音视频处理与小程序，展示项目、摄影与简历。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://www.mingo.zone/" />
+    <meta property="og:site_name" content="Mingo 个人主页" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "汪泉明",
+        "jobTitle": "前端开发工程师",
+        "url": "https://www.mingo.zone/",
+        "sameAs": ["https://github.com/EtherealMingo"]
+      }
+    </script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
