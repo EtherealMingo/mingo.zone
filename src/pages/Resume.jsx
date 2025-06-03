@@ -18,6 +18,7 @@ import {
   openSource,
   generalSkills,
 } from "@/data/resumeData";
+import ScrollLinked from "@/components/ui/ScrollLinked";
 const downResumePDF = async () => {
   try {
     const pdfUrl = "/resume.pdf";
@@ -53,6 +54,7 @@ const motionItemProps = (index) => ({
 const Resume = () => {
   return (
     <Layout>
+      <ScrollLinked />
       <motion.div className="max-w-4xl mx-auto" {...motionSectionProps}>
         {/* 简历头部 */}
         <motion.div className="text-center mb-12" {...motionSectionProps}>
