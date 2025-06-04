@@ -47,7 +47,7 @@ const Photography = () => {
       >
         <h1 className="text-4xl font-bold mb-4">摄影作品</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          通过镜头记录生活中的美好瞬间，分享我对世界的独特视角。
+          技术之外，我仍在观察这个世界。
         </p>
       </motion.div>
 

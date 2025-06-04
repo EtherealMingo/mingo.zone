@@ -16,7 +16,7 @@ const Projects = () => {
       >
         <h1 className="text-4xl font-bold mb-4">我的项目</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          这些是我参与开发的一些项目，展示了我的技术能力和解决问题的实际成果。
+          技术不是冷冰冰的工具，而是通向更好生活的桥梁。
         </p>
       </motion.div>
 

@@ -92,8 +92,8 @@ const Index = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            👋 你好，我是
-            <span className="text-blue-600 dark:text-blue-400">Mingo</span>
+            你好，我是
+            <span className="text-blue-600 dark:text-blue-400">Mingo</span>👋
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
             一名前端开发工程师，关注用户体验、界面美感与交互逻辑。

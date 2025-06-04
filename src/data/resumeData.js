@@ -156,15 +156,26 @@ export const featuredProjects = [
     features: ["音频可视化与处理", "多端适配与高性能渲染", "数据可视化与交互"],
   },
   {
-    title: "长江时代小程序",
-    description:
-      "基于 uniapp 从 0 到 1 开发，包含靓号商城、服务大厅等核心模块，支持话费充值、证件照上传、视频录制、蓝牙设备连接等。",
+    title: "长江时代通信平台小程序",
     image:
-      "https://nocode.meituan.com/photo/search?keyword=mobile,app&width=600&height=400",
-    tags: ["uniapp", "小程序", "移动端", "蓝牙"],
+      "https://nocode.meituan.com/photo/search?keyword=audio,visualization&width=600&height=400",
+    description:
+      "为“长江时代”通信平台开发的官方小程序，提供积分获取、积分兑换、套餐变更、订单管理、实名认证等一站式自助服务，助力业务数字化转型。",
+
+    achievement:
+      "项目已正式上线，服务数万用户。上线后，用户自助办理率提升，积分兑换活跃度显著增长，业务办理效率提升超30%，有效降低人工客服压力，获得用户和业务方一致好评。",
+
+    features: [
+      "前端采用 Vue3 + TypeScript + uni-app 框架，支持多端（小程序/H5）快速适配和组件化开发。",
+      "实现了积分商城、套餐变更、订单支付、实名认证等复杂业务流程，涉及多模块数据联动和权限校验。",
+      "通过自定义组件（如弹窗、标签选择、倒计时等）提升交互体验和代码复用率。",
+      "接入微信支付、短信验证码、实名认证等第三方服务，保证交易安全与合规。",
+      "采用响应式数据管理和模块化 API 封装，提升维护效率和扩展性。",
+      "集成 ESLint/Prettier/Stylelint 等工具，保障代码规范和质量。",
+    ],
+    tags: ["Vue3", "TypeScript", "uni-app", "微信小程序", "H5"],
     github: "",
     demo: "",
-    features: ["多模块业务集成", "多媒体与蓝牙硬件支持", "高可用移动端体验"],
   },
   {
     title: "Underlay Best 拓扑图系统",
