@@ -14,11 +14,27 @@ import {
   WrenchIcon,
   PaletteIcon,
 } from "lucide-react";
-import { featuredProjects } from "@/data/resumeData";
+import { featuredProjects, contact } from "@/data/resumeData";
 import { Link } from "react-router-dom";
 
 const Index = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
+
+  // 判断是否为移动端
+  const isMobile = () => window.innerWidth <= 768;
+
+  // 联系方式（从简历数据导入）
+  const email = contact.email;
+  const phone = contact.phone;
+
+  const handleContactClick = (e) => {
+    if (isMobile()) {
+      e.preventDefault();
+      setShowContactModal(true);
+    }
+    // PC端默认跳转邮箱，无需处理
+  };
 
   const fullText = [
     "👍 擅长使用 React 和 Vue 构建用户体验出色的 Web 应用。具有扎实的技术基础与良好的设计感，尤其注重界面细节、交互流畅性与代码结构的可维护性。",
@@ -138,8 +154,9 @@ const Index = () => {
 
           <div className="flex flex-wrap gap-4 mb-8">
             <a
-              href="mailto:mingo.email@qq.com"
+              href={`mailto:${email}`}
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center"
+              onClick={handleContactClick}
             >
               联系我
               <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -152,6 +169,38 @@ const Index = () => {
               查看简历
             </Link>
           </div>
+
+          {/* 联系方式弹窗（移动端） */}
+          {showContactModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+              <div className="bg-white dark:bg-gray-900 rounded-xl p-6 w-80 shadow-lg relative">
+                <button
+                  className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center text-2xl rounded-full bg-gray-100 dark:bg-gray-500 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+                  onClick={() => setShowContactModal(false)}
+                  aria-label="关闭"
+                >
+                  ×
+                </button>
+                <h3 className="text-lg font-bold mb-4 text-center">
+                  选择联系方式
+                </h3>
+                <div className="flex flex-col gap-4">
+                  <a
+                    href={`tel:${phone}`}
+                    className="px-4 py-3 bg-blue-600 text-white rounded-lg text-center hover:bg-blue-700 transition-colors"
+                  >
+                    拨打电话
+                  </a>
+                  <a
+                    href={`mailto:${email}`}
+                    className="px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-lg text-center hover:bg-gray-200 dark:hover:bg-gray-700 text-blue-600 dark:text-blue-400"
+                  >
+                    发送邮件
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
         </motion.div>
       </section>
 
