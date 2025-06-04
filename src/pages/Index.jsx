@@ -7,6 +7,12 @@ import {
   FacebookIcon,
   ChevronDownIcon,
   ChevronUpIcon,
+  Code2Icon,
+  BracesIcon,
+  VideoIcon,
+  SmartphoneIcon,
+  WrenchIcon,
+  PaletteIcon,
 } from "lucide-react";
 import { featuredProjects } from "@/data/resumeData";
 import { Link } from "react-router-dom";
@@ -169,32 +175,44 @@ const Index = () => {
             {
               title: "前端框架",
               skills: ["React", "Vue", "Next.js", "Axios"],
-              icon: "https://nocode.meituan.com/photo/search?keyword=code,framework&width=100&height=100",
+              icon: (
+                <Code2Icon className="w-6 h-6  text-blue-600 dark:text-blue-400" />
+              ),
             },
             {
               title: "编程语言",
               skills: ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass"],
-              icon: "https://nocode.meituan.com/photo/search?keyword=code,programming&width=100&height=100",
+              icon: (
+                <BracesIcon className="w-6 h-6  text-yellow-500 dark:text-yellow-300" />
+              ),
             },
             {
               title: "音视频处理",
               skills: ["WebRTC", "FFmpeg", "视频编码", "音频处理", "流媒体"],
-              icon: "https://nocode.meituan.com/photo/search?keyword=video,audio&width=100&height=100",
+              icon: (
+                <VideoIcon className="w-6 h-6  text-pink-500 dark:text-pink-400" />
+              ),
             },
             {
               title: "小程序开发",
               skills: ["微信小程序", "UniApp", "跨平台开发", "移动端优化"],
-              icon: "https://nocode.meituan.com/photo/search?keyword=mobile,app&width=100&height=100",
+              icon: (
+                <SmartphoneIcon className="w-6 h-6  text-green-600 dark:text-green-400" />
+              ),
             },
             {
               title: "前端工具",
               skills: ["Webpack", "Vite", "Babel", "ESLint", "Jest"],
-              icon: "https://nocode.meituan.com/photo/search?keyword=tools,development&width=100&height=100",
+              icon: (
+                <WrenchIcon className="w-6 h-6  text-gray-500 dark:text-gray-300" />
+              ),
             },
             {
               title: "UI/UX设计",
               skills: ["Figma", "Axure", "Sketch", "用户研究", "原型设计"],
-              icon: "https://nocode.meituan.com/photo/search?keyword=design,ui&width=100&height=100",
+              icon: (
+                <PaletteIcon className="w-6 h-6  text-purple-600 dark:text-purple-400" />
+              ),
             },
           ].map((category, index) => (
             <motion.div
@@ -206,12 +224,12 @@ const Index = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                  <img
-                    src={category.icon}
-                    alt={category.title}
-                    className="mx-auto object-cover w-full h-full"
-                  />
+                <div
+                  className="w-10 h-10
+                   rounded-full  
+                 overflow-hidden mr-4 flex items-center justify-center bg-gray-100 dark:bg-gray-700"
+                >
+                  {category.icon}
                 </div>
                 <h3 className="text-xl font-semibold">{category.title}</h3>
               </div>
