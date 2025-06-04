@@ -22,7 +22,15 @@ const Layout = ({ children }) => {
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold">
+          <Link
+            to="/"
+            className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-pink-400 to-purple-500 bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-x"
+            style={{
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              color: "transparent",
+            }}
+          >
             mingo.zone
           </Link>
 
@@ -33,7 +41,9 @@ const Layout = ({ children }) => {
                 key={item.to}
                 to={item.to}
                 className={`flex items-center space-x-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
-                  location.pathname === item.to ? "text-blue-600 dark:text-blue-400" : ""
+                  location.pathname === item.to
+                    ? "text-blue-600 dark:text-blue-400"
+                    : ""
                 }`}
               >
                 {item.icon}
@@ -48,7 +58,11 @@ const Layout = ({ children }) => {
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
               aria-label={isDark ? "切换到亮色模式" : "切换到暗色模式"}
             >
-              {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+              {isDark ? (
+                <SunIcon className="h-5 w-5" />
+              ) : (
+                <MoonIcon className="h-5 w-5" />
+              )}
             </button>
 
             {/* 移动端菜单按钮 */}
@@ -57,7 +71,11 @@ const Layout = ({ children }) => {
               className="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
               aria-label="打开菜单"
             >
-              {isMenuOpen ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+              {isMenuOpen ? (
+                <XIcon className="h-5 w-5" />
+              ) : (
+                <MenuIcon className="h-5 w-5" />
+              )}
             </button>
           </div>
         </div>
@@ -76,7 +94,9 @@ const Layout = ({ children }) => {
                   key={item.to}
                   to={item.to}
                   className={`flex items-center space-x-2 py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ${
-                    location.pathname === item.to ? "bg-gray-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400" : ""
+                    location.pathname === item.to
+                      ? "bg-gray-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400"
+                      : ""
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -89,18 +109,20 @@ const Layout = ({ children }) => {
         )}
       </header>
 
-      <main className="container mx-auto px-4 py-8">
-        {children}
-      </main>
+      <main className="container mx-auto px-4 py-8">{children}</main>
 
       <footer className="bg-gray-100 dark:bg-gray-800 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-center gap-4 items-center">
             <div className="mb-4 md:mb-0">
-              <p className="text-gray-600 dark:text-gray-400">苏ICP备2024101751号</p>
+              <p className="text-gray-600 dark:text-gray-400">
+                苏ICP备2024101751号
+              </p>
             </div>
             <div className="flex items-center space-x-4">
-              <p className="text-gray-600 dark:text-gray-400">Powered by mingo.zone</p>
+              <p className="text-gray-600 dark:text-gray-400">
+                Powered by mingo.zone
+              </p>
             </div>
           </div>
         </div>

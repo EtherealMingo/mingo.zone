@@ -92,7 +92,7 @@ export const jobs = [
       "主导公司盯系列产品前端开发（盯小语、盯小蚁、盯小云、盯小链、盯小旭）；长江时代小程序开发；",
       "基于 Vue 3 开发「盯小语」产品，实现音频可视化、录音、音频处理、Canvas 绘图等功能；",
       "盯小云银行反诈系统，基于 ECharts 实现数据可视化；",
-      "基于 uniapp 从 0 到 1 开发「长江时代」小程序，完成涉及靓号商城、服务大厅等运营商核心模块，完成话费充值、身份证件照拍摄上传、视频录制、手写签名、蓝牙设备连接等功能；",
+      "基于 uniapp 从 0 到 1 开发「长江时代」小程序，完成靓号商城、服务大厅等运营商核心模块，完成话费充值、身份证件照拍摄上传、视频录制、手写签名、蓝牙设备连接等功能；",
       "参与公司前端架构设计与规范制定，提升代码质量与可维护性；",
       "2023年提交代码量 10 万行以上。",
     ],
@@ -145,22 +145,11 @@ export const openSource = [
 
 export const featuredProjects = [
   {
-    title: "盯小语/盯小蚁/盯小云/盯小链/盯小旭",
-    description:
-      "主导公司盯系列产品前端开发，涵盖音频可视化、录音、音频处理、Canvas 绘图、数据可视化等核心功能。",
-    image:
-      "https://nocode.meituan.com/photo/search?keyword=audio,visualization&width=600&height=400",
-    tags: ["Vue3", "ECharts", "Canvas", "音频处理"],
-    github: "",
-    demo: "",
-    features: ["音频可视化与处理", "多端适配与高性能渲染", "数据可视化与交互"],
-  },
-  {
     title: "长江时代通信平台小程序",
     image:
       "https://nocode.meituan.com/photo/search?keyword=audio,visualization&width=600&height=400",
     description:
-      "为“长江时代”通信平台开发的官方小程序，提供积分获取、积分兑换、套餐变更、订单管理、实名认证等一站式自助服务，助力业务数字化转型。",
+      "为“长江时代”通信平台开发的官方小程序，提供靓号商城、套餐变更、订单管理、实名认证、积分兑换等一站式自助服务，助力业务数字化转型升级。",
 
     achievement:
       "项目已正式上线，服务数万用户。上线后，用户自助办理率提升，积分兑换活跃度显著增长，业务办理效率提升超30%，有效降低人工客服压力，获得用户和业务方一致好评。",
@@ -177,6 +166,18 @@ export const featuredProjects = [
     github: "",
     demo: "",
   },
+  {
+    title: "盯小语/盯小蚁/盯小云/盯小链/盯小旭",
+    description:
+      "主导公司盯系列产品前端开发，涵盖音频可视化、录音、音频处理、Canvas 绘图、数据可视化等核心功能。",
+    image:
+      "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E7%9B%AF%E5%B0%8F%E8%AF%AD-k0gclo114z2qadh0pypa7lm2fysydu.png",
+    tags: ["Vue3", "ECharts", "Canvas", "音频处理"],
+    github: "",
+    demo: "",
+    features: ["音频可视化与处理", "多端适配与高性能渲染", "数据可视化与交互"],
+  },
+
   {
     title: "Underlay Best 拓扑图系统",
     description:
@@ -195,7 +196,7 @@ export const featuredProjects = [
     image:
       "https://nocode.meituan.com/photo/search?keyword=website,static&width=600&height=400",
     tags: ["静态站点", "前端工具", "评论系统"],
-    github: "https://github.com/EtherealMingo",
+    github: "https://github.com/EtherealMingo/mingo.zone",
     demo: "https://www.mingo.zone",
     features: ["全网资源聚合搜索", "开发者工具导航", "静态评论与互动"],
   },
