@@ -17,3 +17,14 @@ export function extractAllImageUrls(photos) {
     category.images.map(image => image.url)
   );
 }
+
+/**
+ * 脱敏处理手机号码
+ * @param {string} phone - 原始手机号码
+ * @returns {string} 脱敏后的手机号码，如138****5678
+ */
+export function formatPhoneNumber(phone) {
+  if (!phone) return '';
+  // 假设手机号码是11位，保留前3位和后4位，中间用****代替
+  return phone.replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2');
+}

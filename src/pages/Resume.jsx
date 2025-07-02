@@ -19,6 +19,7 @@ import {
   generalSkills,
 } from "@/data/resumeData";
 import ScrollLinked from "@/components/ui/ScrollLinked";
+import { formatPhoneNumber } from "@/lib/utils";
 const downResumePDF = async () => {
   try {
     const pdfUrl = "/resume.pdf";
@@ -78,7 +79,7 @@ const Resume = () => {
                 className="flex items-center justify-center md:justify-start  hover:text-blue-600 dark:hover:text-blue-400"
               >
                 <PhoneIcon className="w-4 h-4 mr-2" />
-                {contact.phone}
+                {formatPhoneNumber(contact.phone)}
               </a>
             </div>
             <div className="w-full md:w-auto">
