@@ -33,11 +33,13 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="md:w-1/2">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="mx-auto object-cover w-full h-full"
-              />
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="mx-auto object-cover w-full h-full"
+                />
+              )}
             </div>
             <div className="md:w-1/2 p-8">
               <h2 className="text-2xl font-bold mb-4">{project.title}</h2>

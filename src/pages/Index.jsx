@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { featuredProjects, contact } from "@/data/resumeData";
 import { Link } from "react-router-dom";
+import { photos } from "@/data/photosData";
+import { extractAllImageUrls } from "@/lib/utils";
 
 const Index = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -51,6 +53,10 @@ const Index = () => {
     "🎓 我的职业路径从“心理学 → 前端开发”跨越而来。大学期间我主修应用心理学，对人类行为与认知模式充满兴趣。这段经历让我格外关注用户体验与交互逻辑，也培养了我敏锐的观察力与沟通能力。",
     "💻 在过去的项目中，我积累了丰富的 B 端产品开发经验，熟练掌握组件化开发、状态管理、性能优化等关键技能，也能与设计师、后端紧密协作，推动复杂项目落地。",
   ];
+
+  const allImageUrls = extractAllImageUrls(photos);
+  //随机抽取八个图片
+  const randomImages = allImageUrls.sort(() => 0.5 - Math.random()).slice(0, 8);
 
   return (
     <Layout>
@@ -375,16 +381,7 @@ const Index = () => {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            "landscape,nature",
-            "city,night",
-            "portrait,people",
-            "architecture,modern",
-            "food,cuisine",
-            "travel,adventure",
-            "abstract,art",
-            "wildlife,animals",
-          ].map((keyword, index) => (
+          {randomImages.map((url, index) => (
             <motion.div
               key={index}
               className="aspect-square overflow-hidden rounded-lg"
@@ -394,7 +391,7 @@ const Index = () => {
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
               <img
-                src={`https://nocode.meituan.com/photo/search?keyword=${keyword}&width=400&height=400`}
+                src={url}
                 alt={`摄影作品 ${index + 1}`}
                 className="mx-auto object-cover w-full h-full transition-transform hover:scale-110"
               />

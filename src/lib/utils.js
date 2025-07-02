@@ -6,3 +6,14 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs) {
   return twMerge(clsx(inputs))
 }
+
+/**
+ * 提取所有图片的URL
+ * @param {Array} photos - 包含摄影作品类别的数组
+ * @returns {Array} 所有图片URL的数组
+ */
+export function extractAllImageUrls(photos) {
+  return photos.flatMap(category => 
+    category.images.map(image => image.url)
+  );
+}

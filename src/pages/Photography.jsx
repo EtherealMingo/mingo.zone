@@ -3,9 +3,13 @@ import { X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import ScrollLinked from "@/components/ui/ScrollLinked";
+import { photos } from "@/data/photosData";
+
 const Photography = () => {
   // 为每个图片创建独立的加载状态
   const [loadingStates, setLoadingStates] = useState({});
+  const [imageColors, setImageColors] = useState({});
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -13,6 +17,62 @@ const Photography = () => {
     setSelectedImage(image);
     setIsModalOpen(true);
     document.body.style.overflow = "hidden"; // 防止背景滚动
+  };
+
+  /**
+   * 使用Canvas API提取图片主色调
+   * @param {string} id - 图片ID
+   * @param {HTMLImageElement} imgElement - 图片元素
+   */
+  const extractImageColor = (id, imgElement) => {
+    // 创建临时canvas元素
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // 设置canvas尺寸为图片尺寸的1/10以提高性能
+    const scale = 0.1;
+    canvas.width = imgElement.naturalWidth * scale;
+    canvas.height = imgElement.naturalHeight * scale;
+
+    // 绘制图片到canvas
+    ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
+
+    try {
+      // 获取像素数据
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      const colorCounts = {};
+      let maxCount = 0;
+      let dominantColor = [240, 240, 240]; // 默认灰色
+
+      // 每10个像素采样一次以提高性能
+      for (let i = 0; i < data.length; i += 40) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        const a = data[i + 3];
+
+        // 跳过透明像素
+        if (a < 255) continue;
+
+        const colorKey = `${r},${g},${b}`;
+        colorCounts[colorKey] = (colorCounts[colorKey] || 0) + 1;
+
+        // 记录出现次数最多的颜色
+        if (colorCounts[colorKey] > maxCount) {
+          maxCount = colorCounts[colorKey];
+          dominantColor = [r, g, b];
+        }
+      }
+
+      // 设置主色调
+      const rgbColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+      setImageColors((prev) => ({ ...prev, [id]: rgbColor }));
+    } catch (error) {
+      console.error("提取图片颜色失败:", error);
+      // 设置默认背景色
+      setImageColors((prev) => ({ ...prev, [id]: "#f0f0f0" }));
+    }
   };
 
   const closeImageModal = () => {
@@ -44,102 +104,6 @@ const Photography = () => {
   const setImageLoading = (id, isLoading) => {
     setLoadingStates((prev) => ({ ...prev, [id]: isLoading }));
   };
-
-  // 模拟摄影作品数据
-  const photos = [
-    {
-      category: "风景",
-      images: [
-        {
-          id: 1,
-          title: "",
-          url: "",
-          description: "",
-          time: "",
-        },
-      ],
-      description: "大自然的壮丽景色",
-    },
-    {
-      category: "城市",
-      images: [
-        {
-          id: 2,
-          title: "",
-          url: "",
-          description: "",
-          time: "",
-        },
-      ],
-      description: "现代都市的魅力",
-    },
-    {
-      category: "人像",
-      images: [
-        {
-          id: 3,
-          title: "",
-          url: "",
-          description: "",
-          time: "",
-        },
-      ],
-      description: "捕捉人物瞬间",
-    },
-    {
-      category: "街拍",
-      images: [
-        {
-          id: 4,
-          title: "",
-          url: "",
-          description: "",
-          time: "",
-        },
-      ],
-      description: "城市生活剪影",
-    },
-    {
-      category: "旅行",
-      images: [
-        {
-          id: 5,
-          title: "景德镇",
-          url: "https://wx3.sinaimg.cn/mw690/6c4b5debgy1i2qjgvjyekj21281ez4e1.jpg",
-          description: "景德镇",
-          time: "",
-        },
-        {
-          id: 6,
-          title: "大理苍山",
-          url: "https://wx1.sinaimg.cn/mw690/6c4b5debgy1i1fe2ra3qxj232r43ox6s.jpg",
-          description: "",
-          time: "",
-        },
-      ],
-      description: "探索世界各地",
-    },
-    {
-      category: "美食",
-      images: [
-        {
-          id: 7,
-          title: "",
-          url: "",
-          description: "",
-          time: "",
-        },
-        {
-          id: 8,
-          title: "",
-          url: "",
-          description: "",
-          time: "",
-        },
-      ],
-      description: "美食摄影作品",
-    },
-  ];
 
   // 确保public/images目录下存在占位图
   useEffect(() => {
@@ -193,21 +157,24 @@ const Photography = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative group">
+                <div
+                  className="relative group flex items-center justify-center"
+                  style={{
+                    backgroundColor: imageColors[image.id] || "#f0f0f0",
+                  }}
+                >
                   {/* 图片加载状态指示器 */}
                   {loadingStates[image.id] !== false && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                       <div className="w-10 h-10 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
                     </div>
                   )}
-                  <div className="absolute top-0 right-0 max-w-xs p-2 bg-black/80 text-white text-right z-10">
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      {image.description}
-                    </p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      {image.time}
-                    </p>
-                  </div>
+                  {image.title ? (
+                    <div className="absolute top-0 right-0 max-w-xs p-1 bg-black/90  rounded-lg text-right z-10">
+                      <p className=" text-gray-200 text-sm">{image.title}</p>
+                    </div>
+                  ) : null}
+
                   {/* 图片元素 */}
                   <img
                     src={image.url}
@@ -217,7 +184,10 @@ const Photography = () => {
                       opacity: loadingStates[image.id] === false ? 1 : 0,
                     }}
                     onClick={() => openImageModal(image)}
-                    onLoad={() => setImageLoading(image.id, false)}
+                    onLoad={() => {
+                      setImageLoading(image.id, false);
+                      extractImageColor(image.id, e.target);
+                    }}
                     onError={(e) => {
                       console.error(
                         "图片加载失败:",

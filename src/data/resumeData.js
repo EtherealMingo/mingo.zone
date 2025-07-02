@@ -209,8 +209,7 @@ export const featuredProjects = [
     title: "keepUp 浏览器扩展",
     description:
       "本地存储常用 URL 列表，支持批量快速打开，基于 DOM 操作实现页面内容标记与管理，提升多任务处理效率。",
-    image:
-      "https://nocode.meituan.com/photo/search?keyword=extension,browser&width=600&height=400",
+    image: "",
     tags: ["WebExtensions", "浏览器插件", "效率工具"],
     github: "https://github.com/EtherealMingo/keepUp",
     demo: "",
