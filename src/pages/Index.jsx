@@ -55,7 +55,7 @@ const Index = () => {
   return (
     <Layout>
       {/* 个人简介部分 */}
-      <section className="min-h-[60vh] flex flex-col md:flex-row items-start justify-center py-12">
+      <section className="flex flex-col md:flex-row items-start justify-center py-12">
         {/* 移动端照片放在上面 */}
         <motion.div
           className="md:hidden w-full flex justify-center mb-8"
@@ -83,7 +83,7 @@ const Index = () => {
 
         {/* 桌面端照片放在右侧 */}
         <motion.div
-          className="hidden md:block md:w-2/5 flex justify-center mb-8"
+          className="hidden md:block md:w-2/5 mb-8"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -403,12 +403,15 @@ const Index = () => {
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href="/photography"
-            className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-          >
-            查看更多作品
-          </a>
+          <Link to="/photography">
+            <button className="viewAll">
+              <span className="text">查看更多作品</span>
+              <span className="blob"></span>
+              <span className="blob"></span>
+              <span className="blob"></span>
+              <span className="blob"></span>
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -436,14 +439,6 @@ const Index = () => {
             >
               <MailIcon className="mr-2 h-5 w-5" /> 发送邮件
             </a>
-            {/* <a
-              href="https://weibo.com/u/1816878571"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              <FacebookIcon className="mr-2 h-5 w-5" /> 微博
-            </a> */}
           </div>
         </motion.div>
       </section>

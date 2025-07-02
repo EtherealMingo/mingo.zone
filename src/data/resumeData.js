@@ -145,7 +145,7 @@ export const openSource = [
 
 export const featuredProjects = [
   {
-    title: "长江时代通信平台小程序",
+    title: "长江时代在线服务小程序",
     image:
       "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E5%B0%8F%E7%A8%8B%E5%BA%8F-lq5h70mo6o3oa8zfsgu33mzw65pzar.jpg",
     description:
@@ -169,13 +169,18 @@ export const featuredProjects = [
   {
     title: "盯小语/盯小蚁/盯小云/盯小链/盯小旭",
     description:
-      "主导公司盯系列产品前端开发，涵盖音频可视化、录音、音频处理、Canvas 绘图、数据可视化等核心功能。",
+      "基于Vue 3 + TypeScript开发的企业级综合管理系统，集成语音处理、数据可视化和多语言支持，提供用户注册、音频管理、数据统计等核心功能。采用模块化架构设计，确保系统可扩展性和维护性。",
     image:
       "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E7%9B%AF%E5%B0%8F%E8%AF%AD-3iwz5wiumy79uq3kzu4wk0fubj0ln7.jpg",
     tags: ["Vue3", "ECharts", "Canvas", "音频处理"],
     github: "",
     demo: "",
-    features: ["音频可视化与处理", "多端适配与高性能渲染", "数据可视化与交互"],
+    features: [
+      "封装通用组件（AudioPlayer、MinioUpload），集成录音功能，实现语音样本采集与上传，提高代码复用率40%",
+      "使用wavesurfer.js开发音频播放器组件，支持音频可视化和播放控制",
+      "实现多语言切换功能，支持中英文界面无缝切换",
+      "集成多种第三方库，实现复杂业务场景",
+    ],
   },
 
   // {

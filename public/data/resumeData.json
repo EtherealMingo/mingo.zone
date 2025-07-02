@@ -139,7 +139,7 @@
   ],
   "featuredProjects": [
     {
-      "title": "长江时代通信平台小程序",
+      "title": "长江时代在线服务小程序",
       "image": "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E5%B0%8F%E7%A8%8B%E5%BA%8F-lq5h70mo6o3oa8zfsgu33mzw65pzar.jpg",
       "description": "为“长江时代”通信平台开发的官方小程序，提供靓号商城、套餐变更、订单管理、实名认证、积分兑换等一站式自助服务，助力业务数字化转型升级。",
       "achievements": [
@@ -159,7 +159,7 @@
     },
     {
       "title": "盯小语/盯小蚁/盯小云/盯小链/盯小旭",
-      "description": "主导公司盯系列产品前端开发，涵盖音频可视化、录音、音频处理、Canvas 绘图、数据可视化等核心功能。",
+      "description": "基于Vue 3 + TypeScript开发的企业级综合管理系统，集成语音处理、数据可视化和多语言支持，提供用户注册、音频管理、数据统计等核心功能。采用模块化架构设计，确保系统可扩展性和维护性。",
       "image": "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E7%9B%AF%E5%B0%8F%E8%AF%AD-3iwz5wiumy79uq3kzu4wk0fubj0ln7.jpg",
       "tags": ["Vue3", "ECharts", "Canvas", "音频处理"],
       "github": "",
