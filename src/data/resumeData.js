@@ -102,7 +102,7 @@ export const jobs = [
     position: "前端开发工程师",
     period: "2021.03 - 2022.11",
     achievements: [
-      "主导前端架构重构，实现 70 + 输入框校验逻辑及复杂页面交互，优化用户体验；",
+      "dcn数据中心开局业务重构，实现 70 + 输入框校验逻辑及复杂页面交互，优化用户体验；",
       "开发 Underlay Best 开局功能，基于 EviewCanvas 完成拓扑图动态绘制，集成 js-xlsx 实现 Excel 数据批量导入；",
       "设计并开发 SelectList（侧边选择）、FullScreen（全屏组件）、OperationTip（操作提示）等可复用组件，提升团队开发效率 30%+；",
       "严格执行 CodeReview 流程，保障代码健壮性与可维护性。",
@@ -147,7 +147,7 @@ export const featuredProjects = [
   {
     title: "长江时代通信平台小程序",
     image:
-      "https://nocode.meituan.com/photo/search?keyword=audio,visualization&width=600&height=400",
+      "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E5%B0%8F%E7%A8%8B%E5%BA%8F-lq5h70mo6o3oa8zfsgu33mzw65pzar.jpg",
     description:
       "为“长江时代”通信平台开发的官方小程序，提供靓号商城、套餐变更、订单管理、实名认证、积分兑换等一站式自助服务，助力业务数字化转型升级。",
 
@@ -171,30 +171,30 @@ export const featuredProjects = [
     description:
       "主导公司盯系列产品前端开发，涵盖音频可视化、录音、音频处理、Canvas 绘图、数据可视化等核心功能。",
     image:
-      "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E7%9B%AF%E5%B0%8F%E8%AF%AD-k0gclo114z2qadh0pypa7lm2fysydu.png",
+      "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E7%9B%AF%E5%B0%8F%E8%AF%AD-3iwz5wiumy79uq3kzu4wk0fubj0ln7.jpg",
     tags: ["Vue3", "ECharts", "Canvas", "音频处理"],
     github: "",
     demo: "",
     features: ["音频可视化与处理", "多端适配与高性能渲染", "数据可视化与交互"],
   },
 
-  {
-    title: "Underlay Best 拓扑图系统",
-    description:
-      "基于 EviewCanvas 实现拓扑图动态绘制，集成 js-xlsx 实现 Excel 数据批量导入，提升网络管理效率。",
-    image:
-      "https://nocode.meituan.com/photo/search?keyword=canvas,network&width=600&height=400",
-    tags: ["EviewCanvas", "js-xlsx", "可视化"],
-    github: "",
-    demo: "",
-    features: ["拓扑图动态渲染", "Excel 数据批量导入", "复杂交互与数据联动"],
-  },
+  // {
+  //   title: "Underlay Best 拓扑图系统",
+  //   description:
+  //     "基于 EviewCanvas 实现拓扑图动态绘制，集成 js-xlsx 实现 Excel 数据批量导入，提升网络管理效率。",
+  //   image:
+  //     "https://nocode.meituan.com/photo/search?keyword=canvas,network&width=600&height=400",
+  //   tags: ["EviewCanvas", "js-xlsx", "可视化"],
+  //   github: "",
+  //   demo: "",
+  //   features: ["拓扑图动态渲染", "Excel 数据批量导入", "复杂交互与数据联动"],
+  // },
   {
     title: "个人网站",
     description:
       "无后端全静态站点，集成全网资源搜索、前端开发工具导航、静态评论系统等功能。",
     image:
-      "https://nocode.meituan.com/photo/search?keyword=website,static&width=600&height=400",
+      "https://s3plus.sankuai.com/nocode-external/nocode_image/default/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99-q0jyjb6958kxyuqdxuothazltkp5yl.jpg",
     tags: ["静态站点", "前端工具", "评论系统"],
     github: "https://github.com/EtherealMingo/mingo.zone",
     demo: "https://www.mingo.zone",
