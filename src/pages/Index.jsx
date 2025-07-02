@@ -404,12 +404,11 @@ const Index = () => {
 
         <div className="text-center mt-12">
           <Link to="/photography">
-            <button className="viewAll">
-              <span className="text">查看更多作品</span>
-              <span className="blob"></span>
-              <span className="blob"></span>
-              <span className="blob"></span>
-              <span className="blob"></span>
+            <button class="view-all">
+              <p class="text">
+                更多作品 <ArrowRightIcon className="ml-2 h-4 w-4" />
+              </p>
+              <span class="BG"></span>
             </button>
           </Link>
         </div>
