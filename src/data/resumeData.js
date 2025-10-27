@@ -84,6 +84,14 @@ export const techStack = [
 
 // 项目经历
 export const jobs = [
+      {
+      "company": "小岛屿（南京）科技有限公司",
+      "position": "前端开发工程师",
+      "period": "2025.08 - 至今",
+      "achievements": [
+        "主导基于 uni-app(Vue 3) 开发的跨平台社交服务应用，支持 iOS、Android、H5、微信小程序等多端发布。应用集成了社交社区、即时通讯、技能服务、电商购物等核心功能，为用户提供全方位的社交服务体验。"
+      ]
+    },
   {
     company: "南京龙垣信息科技有限公司",
     position: "前端开发工程师",
