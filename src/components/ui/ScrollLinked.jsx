@@ -22,7 +22,7 @@ export default function ScrollLinked() {
           originX: 0,
           zIndex: 1000,
         }}
-        className="bg-blue-600"
+        className="bg-brand"
       />
       <slot />
     </>

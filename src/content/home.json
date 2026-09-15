@@ -1,0 +1,111 @@
+{
+  "greeting": "你好，我是",
+  "tagline": "一名前端开发工程师，关注用户体验、界面美感与交互逻辑。",
+  "yearsLabel": "年经验",
+  "bioPreviewCount": 3,
+  "bio": [
+    {
+      "icon": "👍",
+      "text": "擅长使用 React 和 Vue 构建用户体验出色的 Web 应用。具有扎实的技术基础与良好的设计感，尤其注重界面细节、交互流畅性与代码结构的可维护性。"
+    },
+    {
+      "icon": "🎓",
+      "text": "我的职业路径从“心理学 → 前端开发”跨越而来。大学期间我主修应用心理学，对人类行为与认知模式充满兴趣。这段经历让我格外关注用户体验与交互逻辑，也培养了我敏锐的观察力与沟通能力。"
+    },
+    {
+      "icon": "💻",
+      "text": "在过去的项目中，我积累了丰富的 B 端产品开发经验，熟练掌握组件化开发、状态管理、性能优化等关键技能，也能与设计师、后端紧密协作，推动复杂项目落地。"
+    },
+    {
+      "icon": "📷",
+      "text": "工作之外，我热爱摄影与演讲，常以 PPT 设计与公开表达的形式分享想法。我相信视觉传达、结构表达与用户体验的底层逻辑是相通的，这种复合背景也让我在前端开发中更具创造性与共情力。"
+    },
+    {
+      "icon": "📚",
+      "text": "我持续通过阅读、写作与个人项目提升自己，相信技术之外的理解力，才是做好产品体验的关键。"
+    },
+    {
+      "icon": "🌍",
+      "text": "我热爱旅行，喜欢探索不同的文化与生活方式，这让我在工作中更加开放与包容，也能更好地理解用户需求。"
+    },
+    {
+      "icon": "😄",
+      "text": "我期待与志同道合的团队合作，共同创造出色的产品体验。如果你对我的背景感兴趣，欢迎联系我！"
+    }
+  ],
+  "skillsIntro": {
+    "title": "专业技能",
+    "subtitle": "我专注于前端开发领域，拥有丰富的React、Vue等框架开发经验，同时擅长JavaScript、TypeScript等编程语言，以及音视频处理和微信小程序开发。"
+  },
+  "skills": [
+    {
+      "title": "前端框架",
+      "icon": "code2",
+      "accent": "brand",
+      "skills": ["React", "Vue", "Next.js", "Axios"]
+    },
+    {
+      "title": "编程语言",
+      "icon": "braces",
+      "accent": "yellow",
+      "skills": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass"]
+    },
+    {
+      "title": "音视频处理",
+      "icon": "video",
+      "accent": "pink",
+      "skills": ["WebRTC", "FFmpeg", "视频编码", "音频处理", "流媒体"]
+    },
+    {
+      "title": "小程序开发",
+      "icon": "smartphone",
+      "accent": "green",
+      "skills": ["微信小程序", "UniApp", "跨平台开发", "移动端优化"]
+    },
+    {
+      "title": "前端工具",
+      "icon": "wrench",
+      "accent": "gray",
+      "skills": ["Webpack", "Vite", "Babel", "ESLint", "Jest"]
+    },
+    {
+      "title": "UI/UX设计",
+      "icon": "palette",
+      "accent": "purple",
+      "skills": ["Figma", "Axure", "Sketch", "用户研究", "原型设计"]
+    }
+  ],
+  "featuredSection": {
+    "title": "精选项目",
+    "subtitle": "以下是我近期参与的一些代表性项目，展示了我的技术能力和解决问题的实际成果。",
+    "count": 2
+  },
+  "photoSection": {
+    "title": "摄影作品",
+    "subtitle": "除了编程，我还热爱摄影，通过镜头捕捉生活中的美好瞬间。",
+    "previewCount": 8
+  },
+  "contactSection": {
+    "title": "联系我",
+    "subtitle": "如果您有项目合作、工作机会或者只是想交流技术，欢迎随时联系我！"
+  },
+  "cta": {
+    "contact": "联系我",
+    "resume": "查看简历",
+    "moreProjects": "查看更多项目",
+    "morePhotos": "更多作品",
+    "email": "发送邮件",
+    "call": "拨打电话",
+    "contactModalTitle": "选择联系方式",
+    "expand": "展开更多",
+    "collapse": "收起"
+  },
+  "projectsPage": {
+    "title": "我的项目",
+    "subtitle": "技术不是冷冰冰的工具，而是通向更好生活的桥梁。"
+  },
+  "photographyPage": {
+    "title": "摄影作品",
+    "subtitle": "技术之外，我仍在观察这个世界。"
+  }
+}

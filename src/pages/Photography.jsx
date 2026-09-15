@@ -3,9 +3,10 @@ import { X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import ScrollLinked from "@/components/ui/ScrollLinked";
-import { photos } from "@/data/photosData";
+import { useContent } from "@/content/ContentProvider";
 
 const Photography = () => {
+  const { home, photos } = useContent();
   // 为每个图片创建独立的加载状态
   const [loadingStates, setLoadingStates] = useState({});
   const [imageColors, setImageColors] = useState({});
@@ -130,9 +131,9 @@ const Photography = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-4xl font-bold mb-4">摄影作品</h1>
+        <h1 className="text-4xl font-bold mb-4">{home.photographyPage.title}</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          技术之外，我仍在观察这个世界。
+          {home.photographyPage.subtitle}
         </p>
       </motion.div>
       {photos.map((category, index) => (
@@ -166,7 +167,7 @@ const Photography = () => {
                   {/* 图片加载状态指示器 */}
                   {loadingStates[image.id] !== false && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                      <div className="w-10 h-10 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                      <div className="w-10 h-10 border-4 border-brand-soft border-t-brand rounded-full animate-spin"></div>
                     </div>
                   )}
                   {image.title ? (
@@ -184,9 +185,9 @@ const Photography = () => {
                       opacity: loadingStates[image.id] === false ? 1 : 0,
                     }}
                     onClick={() => openImageModal(image)}
-                    onLoad={() => {
+                    onLoad={(event) => {
                       setImageLoading(image.id, false);
-                      extractImageColor(image.id, e.target);
+                      extractImageColor(image.id, event.target);
                     }}
                     onError={(e) => {
                       console.error(
@@ -217,7 +218,7 @@ const Photography = () => {
           </div>
         </motion.section>
       ))}
-      + {/* 图片查看模态框 */}
+      {/* 图片查看模态框 */}
       <AnimatePresence>
         {isModalOpen && selectedImage && (
           <motion.div

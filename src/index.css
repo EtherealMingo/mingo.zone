@@ -4,6 +4,19 @@
 
 @layer base {
   :root {
+    --color-primary-base: #2563eb;
+    --color-primary: var(--color-primary-base);
+    --color-primary-hover: color-mix(
+      in srgb,
+      var(--color-primary-base) 82%,
+      black
+    );
+    --color-primary-soft: color-mix(
+      in srgb,
+      var(--color-primary-base) 14%,
+      transparent
+    );
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -36,6 +49,14 @@
   }
 
   .dark {
+    --color-primary: color-mix(in srgb, var(--color-primary-base) 42%, white);
+    --color-primary-hover: color-mix(in srgb, var(--color-primary) 82%, white);
+    --color-primary-soft: color-mix(
+      in srgb,
+      var(--color-primary-base) 22%,
+      transparent
+    );
+
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -90,7 +111,7 @@
   animation: gradient-x 2s linear infinite alternate;
 }
 
-/* From Uiverse.io by mayurd8862 */ 
+/* From Uiverse.io by mayurd8862 */
 .view-all {
   position: relative;
   background-color: transparent;
@@ -99,7 +120,7 @@
   height: 40px;
   border-radius: 5px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .view-all .text {
@@ -122,14 +143,13 @@
   content: "";
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(147deg,
-  #8b04e5,#dcea1e);
+  background-image: linear-gradient(147deg, #8b04e5, #dcea1e);
   z-index: -1;
   left: 6px;
   top: 6px;
   border-radius: 7px;
   pointer-events: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .view-all:hover {

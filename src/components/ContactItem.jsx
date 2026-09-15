@@ -11,7 +11,7 @@ export default function ContactItem({ icon: Icon, content, href }) {
       {href ? (
         <a
           href={href}
-          className="flex items-center justify-center md:justify-start hover:text-blue-600"
+          className="flex items-center justify-center md:justify-start hover:text-brand"
         >
           <Icon className="w-4 h-4 mr-2" />
           {content}

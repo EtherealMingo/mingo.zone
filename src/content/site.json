@@ -1,0 +1,44 @@
+{
+  "name": "mingo.zone",
+  "displayName": "Mingo",
+  "icp": "苏ICP备2024101751号",
+  "footer": "Powered by mingo.zone",
+  "seo": {
+    "title": "Mingo | 前端开发工程师 | 个人主页",
+    "description": "Mingo 的个人主页，前端开发工程师，专注于 React、Vue、音视频处理、小程序开发等，展示项目、摄影与简历，南京，中国。",
+    "keywords": "Mingo,前端开发,React,Vue,音视频,小程序,个人简历,项目,摄影,南京,中国,Web开发,TypeScript,JavaScript,uniapp,可视化,工程师",
+    "ogTitle": "Mingo | 前端开发工程师 | 个人主页",
+    "ogDescription": "Mingo 的个人主页，专注于前端开发、音视频处理与小程序，展示项目、摄影与简历。",
+    "ogUrl": "https://www.mingo.zone/",
+    "ogSiteName": "Mingo 个人主页"
+  },
+  "theme": {
+    "primary": "#2563eb"
+  },
+  "nav": [
+    {
+      "id": "home",
+      "title": "首页",
+      "to": "/",
+      "visible": true
+    },
+    {
+      "id": "projects",
+      "title": "项目",
+      "to": "/projects",
+      "visible": true
+    },
+    {
+      "id": "photography",
+      "title": "摄影",
+      "to": "/photography",
+      "visible": true
+    },
+    {
+      "id": "resume",
+      "title": "简历",
+      "to": "/resume",
+      "visible": true
+    }
+  ]
+}
