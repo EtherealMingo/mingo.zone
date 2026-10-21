@@ -189,12 +189,6 @@ const Photography = () => {
                     onLoadStart={() => setImageLoading(image.id, true)}
                   />
 
-                  {/* 调试信息 */}
-                  {process.env.NODE_ENV === "development" && (
-                    <div className="absolute bottom-2 left-2 text-xs bg-black/50 text-white px-2 py-1 rounded max-w-[200px] truncate">
-                      {image.url}
-                    </div>
-                  )}
                 </div>
               </motion.div>
             ))}
