@@ -27,14 +27,9 @@ const Layout = ({ children }) => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link
             to="/"
-            className="text-2xl font-bold bg-clip-text text-transparent animate-gradient-x"
+            className="text-2xl font-bold"
             style={{
-              backgroundImage:
-                "linear-gradient(to right, var(--color-primary), color-mix(in srgb, var(--color-primary) 55%, white), var(--color-primary))",
-              backgroundSize: "200% auto",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
+              color: "var(--color-primary)",
             }}
           >
             {site.name}

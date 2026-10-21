@@ -106,22 +106,6 @@ const Photography = () => {
     setLoadingStates((prev) => ({ ...prev, [id]: isLoading }));
   };
 
-  // 确保public/images目录下存在占位图
-  useEffect(() => {
-    const checkPlaceholder = async () => {
-      try {
-        const response = await fetch("/images/placeholder.jpg");
-        if (!response.ok) throw new Error("占位图不存在");
-      } catch (error) {
-        console.warn(
-          "占位图未找到，请在public/images目录下添加placeholder.jpg",
-          error
-        );
-      }
-    };
-    checkPlaceholder();
-  }, []);
-
   return (
     <Layout>
       <ScrollLinked />
@@ -154,12 +138,12 @@ const Photography = () => {
             {category.images.map((image, photoIndex) => (
               <motion.div
                 key={photoIndex}
-                className="aspect-square overflow-hidden rounded-lg"
+                className="aspect-square overflow-hidden rounded-lg relative"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
                 <div
-                  className="relative group flex items-center justify-center"
+                  className="absolute inset-0 group flex items-center justify-center"
                   style={{
                     backgroundColor: imageColors[image.id] || "#f0f0f0",
                   }}
@@ -197,10 +181,9 @@ const Photography = () => {
                         e.message
                       );
                       console.error(
-                        "请检查: 1.URL是否正确 2.文件是否存在于public目录 3.路径是否以/开头"
+                        "请检查: 1.图床URL是否可访问 2.是否被跨域或防盗链拦截"
                       );
                       setImageLoading(image.id, false);
-                      // e.target.src = "/images/placeholder.jpg"; // 请确保此占位图存在
                     }}
                     // 初始设置为加载中
                     onLoadStart={() => setImageLoading(image.id, true)}

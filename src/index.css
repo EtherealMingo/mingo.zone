@@ -96,21 +96,6 @@
   }
 }
 
-@keyframes gradient-x {
-  0% {
-    background-position: 0% 40%;
-  }
-  50% {
-    background-position: 40% 70%;
-  }
-  100% {
-    background-position: 100% 70%;
-  }
-}
-.animate-gradient-x {
-  animation: gradient-x 2s linear infinite alternate;
-}
-
 /* From Uiverse.io by mayurd8862 */
 .view-all {
   position: relative;
